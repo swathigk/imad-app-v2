@@ -1,14 +1,16 @@
-var express = require('express');
-var morgan = require('morgan');
+var express = require('express');// create webservices
+var morgan = require('morgan'); //help us output logs,response and all
 var path = require('path');
 
 var app = express();
 app.use(morgan('combined'));
 
-app.get('/', function (req, res) {
+//handle specific url '/' we use sendfiel func
+app.get('/', function (req, res) {            
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
 
+//when this url is reuqested this fn will execute
 app.get('/ui/style.css', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'style.css'));
 });
