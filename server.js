@@ -11,6 +11,19 @@ app.get('/', function (req, res) {
 });
 
 //when this url is reuqested this fn will execute
+app.get('/article-one',function(req,res){
+    res.send('Article one requestes and will be sevred here')
+});
+
+app.get('/article-two',function(req,res){
+    res.send('Article two requestes and will be sevred here')
+});
+
+app.get('/article-three',function(req,res){
+    res.send('Article three requestes and will be sevred here')
+});
+
+
 app.get('/ui/style.css', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'style.css'));
 });
