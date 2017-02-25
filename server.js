@@ -5,25 +5,46 @@ var path = require('path');
 var app = express();
 app.use(morgan('combined'));
 
-
-var articleone= {
-    title: 'Article one | Swathi',
-    heading: 'Article one',
-    date:   '25th feb 2017',
-    content: `<p>
-                This is the content for my first article.This is the content for my first article.This is the content for my first article.
+var articles={
+ articleone= {
+        title: 'Article one | Swathi',
+        heading: 'Article one',
+        date:   '25th feb 2017',
+        content: `<p>
+                    This is the content for my first article.This is the content for my first article.This is the content for my first article.
+                    
+                    
+                    Hello
+                    Hai
+                </p>
+                <p>
+                    This is the content for my first article.This is the content for my first article.
+                    This is the content for my first article.
+                    
+                    Hello
+                    Hai
+                </p>`
+    },
+    articletwo:{
+        title: 'Article two | Swathi',
+        heading: 'Article two',
+        date:   '26th feb 2017',
+        content: `<p>
+                    This is the content for my 2 article.This is the content for my first article.This is the content for my first article</p>.`
+            
+    },
+    articlethree:{
+        title: 'Article 3 | Swathi',
+        heading: 'Article 3',
+        date:   '27th feb 2017',
+        content: `
+                    <p>
+                    This is the content for my 3 article.This is the content for my 3 article.This is the content for my 3 article.
+                  </p>.`
+                  `
                 
-                
-                Hello
-                Hai
-            </p>
-            <p>
-                This is the content for my first article.This is the content for my first article.
-                This is the content for my first article.
-                
-                Hello
-                Hai
-            </p>`
+        
+    }
 };
 
 function createtemplate(data){
