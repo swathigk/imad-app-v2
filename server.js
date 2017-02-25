@@ -70,7 +70,7 @@ return htmltemplate;
 }
 
 
-`
+
 //handle specific url '/' we use sendfiel func
 app.get('/', function (req, res) {            
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
@@ -78,7 +78,7 @@ app.get('/', function (req, res) {
 
 //when this url is reuqested this fn will execute
 app.get('/article-one',function(req,res){
-    res.send(createtemplate(article-one);
+    res.send(createtemplate(article-one));
 });
 
 app.get('/article-two',function(req,res){
