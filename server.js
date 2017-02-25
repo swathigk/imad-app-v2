@@ -12,7 +12,7 @@ app.get('/', function (req, res) {
 
 //when this url is reuqested this fn will execute
 app.get('/article-one',function(req,res){
-    res.sendFile(path.join(__dirname, 'ui', 'aticle-one.html'));
+    res.sendFile(path.join(__dirname, 'ui', 'article-one.html'));
 });
 
 app.get('/article-two',function(req,res){
