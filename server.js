@@ -1,6 +1,15 @@
 var express = require('express');// create webservices
 var morgan = require('morgan'); //help us output logs,response and all
 var path = require('path');
+var Pool=require('pg').Pool;
+
+var config={
+    user:'swathigk',
+    database:'swathigk',
+    host:'db.imad.hasura-app.io',
+    port:'5432',
+    password:process.env.DB_PASSWORD
+}
 
 var app = express();
 app.use(morgan('combined'));
@@ -91,6 +100,18 @@ return htmltemplate;
 //handle specific url '/' we use sendfiel func
 app.get('/', function (req, res) {            
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
+});
+var pool=new Pool(config)
+app.get('/test-db',function(req,res)
+{
+
+    pool.query('SELECT * FROM test',fucntion(err,result)){
+        if(err)
+        res.status(500).send(err.toStirn());
+        else
+        res.send(JSON.stringify(result));
+        
+    }
 });
 
 var counter=0;
