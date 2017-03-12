@@ -133,7 +133,7 @@ app.get('/submit-name/:name',function(req,res){
 })
 
 //when this url is reuqested this fn will execute
-app.get('/article/:articlename',function(req,res){
+app.get('/articles/:articlename',function(req,res){
     //article name is article one
     //var articlename=req.params.articlename;
     //var articleData 
