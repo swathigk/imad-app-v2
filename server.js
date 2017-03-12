@@ -133,10 +133,30 @@ app.get('/submit-name/:name',function(req,res){
 })
 
 //when this url is reuqested this fn will execute
-app.get('/:articlename',function(req,res){
+app.get('/article/:articlename',function(req,res){
     //article name is article one
-    var articlename=req.params.articlename;
-    res.send(createtemplate(articles[articlename]));
+    //var articlename=req.params.articlename;
+    //var articleData 
+    pool.query("SELECT *FROM article WHERE title="+req.params.articlename,function(err,result){
+        if(err){
+            
+        
+        res.status(500).send(err.toString());
+        }
+        else
+        {
+            if(result.rows.length===0)
+            {
+                res.status(404).send('article not found');
+            }
+                else
+                {
+                    var articleData=result.rows[0];
+                    res.send(createTemplate(articleData));
+                }
+            }
+        });
+    
 });
 
 
