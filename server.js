@@ -2,6 +2,7 @@ var express = require('express');// create webservices
 var morgan = require('morgan'); //help us output logs,response and all
 var path = require('path');
 var Pool=require('pg').Pool;
+var crypto=require('crypto');
 
 var config={
     user:'swathigk',
@@ -15,45 +16,7 @@ var config={
 var app = express();
 app.use(morgan('combined'));
 
-var articles={
- 'article-one': {
-        title: 'Article one | Swathi',
-        heading: 'Article one',
-        date:   '25th feb 2017',
-        content: `<p>
-                    This is the content for my first article.This is the content for my first article.This is the content for my first article.
-                    
-                    
-                    Hello
-                    Hai
-                </p>
-                <p>
-                    This is the content for my first article.This is the content for my first article.
-                    This is the content for my first article.
-                    
-                    Hello
-                    Hai
-                </p>`
-    },
-    'article-two':{
-        title: 'Article two | Swathi',
-        heading: 'Article two',
-        date:   '26th feb 2017',
-        content: `<p>
-                    This is the content for my 2 article.This is the content for my first article.This is the content for my first article</p>.`
-            
-    },
-    'article-three':{
-        title: 'Article 3 | Swathi',
-        heading: 'Article 3',
-        date:   '27th feb 2017',
-        content: `
-                    <p>
-                    This is the content for my 3 article.This is the content for my 3 article.This is the content for my 3 article.
-                  </p>.`
-        
-    }
-};
+
 
 function createtemplate(data){
     var title=data.title;
@@ -102,6 +65,23 @@ return htmltemplate;
 app.get('/', function (req, res) {            
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
+
+
+function hash(input,salt){
+    
+    //how to create hash
+    //default lib crypto
+    var hashed=crypto.pbkdf2Sync(input,salt,10000,512,'sha512');
+    return hashed.toString('hex');//convert binary to string type
+}
+
+
+app.get('/hash/:input',function(req,res){
+    var hashedString=hash(req.params.input,'this-is-some-random-string');
+    res.send(hashedString);
+    
+})
+
 var pool=new Pool(config);
 app.get('/test-db',function(req,res)
 {
