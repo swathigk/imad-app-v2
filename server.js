@@ -126,9 +126,7 @@ var names=[];
 app.get('/submit-name/:name',function(req,res){
     //get name from reuqest obj
     var name=req.query.name;//1000
-    
     names.push(name);
-    
     res.send(JSON.stringify(names));
 });
 
