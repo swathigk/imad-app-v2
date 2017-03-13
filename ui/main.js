@@ -6,7 +6,7 @@ submit.onclick=function(){
     var request=new XMLHttpRequest();
     //capture list
     alert('hi');
-    request.onreadystateChange=function(){
+    request.onreadystatechange=function(){
         alert('inside func');
         if(request.readyState===XMLHttpRequest.DONE){
             alert('before 200');
