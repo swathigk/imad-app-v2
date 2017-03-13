@@ -7,7 +7,7 @@ submit.onclick=function(){
     request.onreadystateChange=function(){
         if(request.readyState===XMLHttpRequest.DONE){
             if(request.status===200){
-                console.log('logged in');
+                
                 alert('log in successful');
                 }
                 else if(request.status===403)
