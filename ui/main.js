@@ -2,14 +2,14 @@
 var submit=document.getElementById('submit_btn');
 submit.onclick=function(){
     //make request to server
-    alert('hello');
+    //alert('hello');
     var request=new XMLHttpRequest();
     //capture list
-    alert('hi');
+    //alert('hi');
     request.onreadystatechange=function(){
-        alert('inside func');
+      //  alert('inside func');
         if(request.readyState===XMLHttpRequest.DONE){
-            alert('before 200');
+        //    alert('before 200');
             if(request.status===200){
                 alert('log in successful');
                 }
