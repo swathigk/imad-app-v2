@@ -1,15 +1,15 @@
 var express = require('express');// create webservices
 var morgan = require('morgan'); //help us output logs,response and all
 var path = require('path');
-var Pool=require('pg').Pool;
+var pool=require('pg').Pool;
 
 var config={
     user:'swathigk',
     database:'swathigk',
     host:'db.imad.hasura-app.io',
     port:'5432',
-//    password:process.env.DB_PASSWORD
-    password:'db-swathigk-40622'
+    password:process.env.DB_PASSWORD
+   
 };
 
 var app = express();
