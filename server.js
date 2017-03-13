@@ -72,13 +72,19 @@ function hash(input,salt){
     //how to create hash
     //default lib crypto
     var hashed=crypto.pbkdf2Sync(input,salt,10000,512,'sha512');
-    return hashed.toString('hex');//convert binary to string type
+    return ['pbkdf2',10000,salt,hashed.toString('hex')].join('$');//convert binary to string type
+    
+    //algorithm:md5
+
+    
 }
 
 
 app.get('/hash/:input',function(req,res){
     var hashedString=hash(req.params.input,'this-is-some-random-string');
     res.send(hashedString);
+    
+    
  
 });
 
