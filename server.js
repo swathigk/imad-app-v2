@@ -72,7 +72,8 @@ function hash(input,salt){
     //how to create hash
     //default lib crypto
     var hashed=crypto.pbkdf2Sync(input,salt,10000,512,'sha512');
-    return hashed.toString('hex');//convert binary to string type
+    return('hello');
+    //return hashed.toString('hex');//convert binary to string type
 }
 
 
