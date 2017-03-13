@@ -130,7 +130,7 @@ app.get('/submit-name/:name',function(req,res){
     names.push(name);
     
     res.send(JSON.stringify(names));
-})
+});
 
 //when this url is reuqested this fn will execute
 app.get('/articles/:articlename',function(req,res){
