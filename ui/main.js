@@ -22,9 +22,8 @@ submit.onclick=function(){
   var password=document.getElementById('password').value;
   console.log(username);
   console.log(password);
-  var name=nameInput.value;
   
-  request.open('POST','http://swathigl.imad.hasura-app.io/login',true);
+  request.open('POST','http://swathigk.imad.hasura-app.io/login',true);
   request.setRequestHeader('Content-Type','application/json');
   request.send(JSON.stringify({username:username,password:password}));
 };
