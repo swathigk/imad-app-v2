@@ -5,7 +5,7 @@ submit.onclick=function(){
     var request=new XMLHttpRequest();
     //capture list
     request.onreadystateChange=function(){
-        if(request.readyState===XNLHttpRequest.DONE){
+        if(request.readyState===X    MLHttpRequest.DONE){
             if(request.status===200){
                 console.log('logged in');
                 alert('log in successful');
