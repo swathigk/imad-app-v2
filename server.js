@@ -135,7 +135,7 @@ app.get('/articles/:articleName',function(req,res){
     //article name is article one
     //var articlename=req.params.articlename;
     //var articleData 
-    Pool.query("SELECT * FROM article WHERE title='" + req.params.articleName + "'",function(err,result){
+    pool.query("SELECT * FROM article WHERE title='" + req.params.articleName + "'",function(err,result){
         if(err){
             res.status(500).send(err.toString());
         }
