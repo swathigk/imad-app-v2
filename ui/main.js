@@ -2,6 +2,7 @@
 var submit=document.getElementById('submit_btn');
 submit.onclick=function(){
     //make request to server
+    alert('hello');
     var request=new XMLHttpRequest();
     //capture list
     request.onreadystateChange=function(){
