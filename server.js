@@ -119,7 +119,7 @@ app.post('/login',function(req,res){
                 if(hashpass===dbString)
                 res.send('correct');
                 else
-                res.send('not proper user');
+                res.send(403).send('not proper user');
             }
         }
     });
