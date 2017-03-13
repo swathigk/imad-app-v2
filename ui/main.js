@@ -5,10 +5,11 @@ submit.onclick=function(){
     alert('hello');
     var request=new XMLHttpRequest();
     //capture list
+    alert('hi');
     request.onreadystateChange=function(){
         if(request.readyState===XMLHttpRequest.DONE){
+            alert('before 200');
             if(request.status===200){
-                
                 alert('log in successful');
                 }
                 else if(request.status===403)
