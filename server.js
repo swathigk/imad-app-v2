@@ -6,15 +6,15 @@ var app=express();
 app.use(morgan('combined'));
 
 app.get('/',function(req,res){
-res.sendFile(path.join(_dirname,'ui','index.html'));
+res.sendFile(path.join(__dirname,'ui','index.html'));
 });
 
 app.get('/ui/style.css',function(req,res){
-res.sendFile(path.join(_dirname,'ui','style.css'));
+res.sendFile(path.join(__dirname,'ui','style.css'));
 });
 
 app.get('/ui/modi.png',function(req,res){
-res.sendFile(path.join(_dirname,'ui','modi.png'));
+res.sendFile(path.join(__dirname,'ui','modi.png'));
 });
 
 var port=8080;
